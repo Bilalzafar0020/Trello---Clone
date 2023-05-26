@@ -1,0 +1,218 @@
+/*  Navbar font */
+/* @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Lobster&family=Poppins:wght@400;500&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Lobster&family=Poppins:wght@400;500&family=Tsukimi+Rounded:wght@400;500&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header{
+    /* font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Poppins', sans-serif; */
+
+font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Tsukimi Rounded', sans-serif;
+
+
+text-align: center;
+height: 10vh;
+width: 100%;
+background-color: #08479e !important;
+}
+div.logo{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: center;
+ padding-top: 5px;
+}
+div.logo p{
+    font-size: 30px;
+    color: #ffffff;
+font-variant:normal;
+font-weight: 500;
+}
+
+
+/*  main section  */ 
+
+main{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    width: 100%;
+    height: 90vh;
+    background-color: #2491d2;
+    overflow: hidden;
+display: flex;
+flex-direction: row;
+}
+
+.board{
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+.list1{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    outline: none;
+    background: #f1f2f4;
+    width: 18rem;
+    height: 25rem;
+    border-radius: 20px;
+    
+}
+.list1 h3{
+    text-align:left;
+    font-size: 18px;
+    color: #3d4249;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+div.cards1{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 10px;
+    /* width: 90%;
+    height: 90%; */
+    border-radius: 20px;
+   margin-left: 12px;
+    padding: 10px;
+    overflow: auto;
+font-size: small;
+color: #3d4249;
+}
+div.card{
+   height: 2.6rem;
+   border: none;
+   outline: none;
+   border-radius: 10px;
+    box-shadow: 1.5px 1.5px 1.5px 1.5px    #81848b;
+width: 15rem;
+text-align: justify;
+box-shadow: 0 1px 0 rgba(9,30,66,.25);
+background: white;
+}
+
+
+
+
+
+.list2{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    outline: none;
+    background: #f1f2f4;
+    width: 18rem;
+    height: 25rem;
+    border-radius: 20px;
+    
+}
+.list2 h3{
+    text-align:left;
+    font-size: 18px;
+    color: #3d4249;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+div.cards2{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 10px;
+    /* width: 90%;
+    height: 90%; */
+    border-radius: 20px;
+   margin-left: 12px;
+    padding: 10px;
+    overflow: auto;
+    font-size: small;
+    color: #3d4249;
+}
+div.card2{
+   height: 2.6rem;
+   border: none;
+   outline: none;
+   border-radius: 10px;
+    box-shadow: 1.5px 1.5px 1.5px 1.5px    #81848b;
+width: 15rem;
+text-align: justify;
+box-shadow: 0 1px 0 rgba(9,30,66,.25);
+background: white;
+}
+
+
+
+
+
+
+.list3{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    outline: none;
+    background: #f1f2f4;
+    width: 18rem;
+    height: 25rem;
+    border-radius: 20px;
+    
+}
+.list3 h3{
+    text-align:left;
+    font-size: 18px;
+    color: #3d4249;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+div.cards3{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 10px;
+    /* width: 90%;
+    height: 90%; */
+    border-radius: 20px;
+   margin-left: 12px;
+    padding: 10px;
+    overflow: auto;
+    font-size: small;
+    color: #3d4249;
+}
+div.card3{
+   height: 2.6rem;
+   border: none;
+   outline: none;
+   border-radius: 10px;
+    box-shadow: 1.5px 1.5px 1.5px 1.5px    #81848b;
+width: 15rem;
+text-align: justify;
+box-shadow: 0 1px 0 rgba(9,30,66,.25);
+background: white;
+}
+
+div[contenteditable="true"] {
+    cursor: pointer;
+  }
+  
+div.dragging {
+    opacity: 0.5; /* Reduce opacity while dragging */
+  }
+  
+  div.drag-enter {
+    border: 2px dashed #08479e; /* Add border when element is dragged over */
+  }
+  
+
+
