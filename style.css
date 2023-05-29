@@ -61,158 +61,117 @@ flex-direction: row;
     margin-left: 30px;
 }
 
-.list1{
-    display: flex;
-    flex-direction: column;
+.list1,.list2,.list3 {
     border: none;
     outline: none;
     background: #f1f2f4;
-    width: 18rem;
-    height: 25rem;
-    border-radius: 20px;
-    
-}
-.list1 h3{
-    text-align:left;
-    font-size: 18px;
-    color: #3d4249;
-    margin-top: 15px;
-    margin-left: 15px;
-}
-div.cards1{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 10px;
-    /* width: 90%;
-    height: 90%; */
-    border-radius: 20px;
-   margin-left: 12px;
-    padding: 10px;
+    width: 20rem;
+    height: 15vh;
+    border-radius: 10px;
     overflow: auto;
-font-size: small;
-color: #3d4249;
-}
-div.card{
-   height: 2.6rem;
-   border: none;
-   outline: none;
-   border-radius: 10px;
-    box-shadow: 1.5px 1.5px 1.5px 1.5px    #81848b;
-width: 15rem;
-text-align: justify;
-box-shadow: 0 1px 0 rgba(9,30,66,.25);
-background: white;
-}
+  }
 
-
-
-
-
-.list2{
-    display: flex;
-    flex-direction: column;
+  
+/*  for scrool bar */
+.list1,.list2,.list3 {
+    scrollbar-color: #c5c9d1; /* Change the scroll bar color to white */
+    scrollbar-width: 10px; /* Set the width of the scroll bar to 10px */
+  }
+  
+  .list1::-webkit-scrollbar,   /* by using this method we can select multiply elemensts for pseudoelemests */
+  .list2::-webkit-scrollbar,
+  .list3::-webkit-scrollbar {
+    width: 10px; /* Set the width of the scroll bar to 10px */
+  }
+  
+  .list1::-webkit-scrollbar-thumb,
+  .list2::-webkit-scrollbar-thumb,
+  .list3::-webkit-scrollbar-thumb {
+    background-color: #c5c9d1; /* Change the color of the scroll bar thumb */
+  }
+  .Addtitle1,
+  .Addtitle2,
+  .Addtitle3 {
+    position: sticky; /* so that the title should stick */
+    top: 0;
+    z-index: 1;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 18rem;
+    height: 30px;
+    background: #f1f2f4;
     border: none;
     outline: none;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 550;
+    cursor: text;
+    transition: border-color 0.1s, border-radius 0.1s, background-color 0.1s;
+  }
+  
+  .Addtitle1:focus,
+  .Addtitle1:hover,
+  .Addtitle2:focus,
+  .Addtitle2:hover,
+  .Addtitle3:focus,
+  .Addtitle3:hover {     /*  so that when user focus it the bordere should display */
+    border: 2px solid #003bfc;
+    border-radius: 5px;
+    background-color: #ffffff;
+  }
+  
+.AddaCard,.AddaCard2,.AddaCard3 {
+    margin-left: 10px;
+    margin-bottom: 8px;
+    width: 16.5rem;
+    height: 30px;
     background: #f1f2f4;
-    width: 18rem;
-    height: 25rem;
-    border-radius: 20px;
-    
-}
-.list2 h3{
-    text-align:left;
-    font-size: 18px;
-    color: #3d4249;
-    margin-top: 15px;
-    margin-left: 15px;
-}
-div.cards2{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 10px;
-    /* width: 90%;
-    height: 90%; */
-    border-radius: 20px;
-   margin-left: 12px;
-    padding: 10px;
-    overflow: auto;
-    font-size: small;
-    color: #3d4249;
-}
-div.card2{
-   height: 2.6rem;
-   border: none;
-   outline: none;
-   border-radius: 10px;
-    box-shadow: 1.5px 1.5px 1.5px 1.5px    #81848b;
-width: 15rem;
-text-align: justify;
-box-shadow: 0 1px 0 rgba(9,30,66,.25);
-background: white;
-}
-
-
-
-
-
-
-.list3{
-    display: flex;
-    flex-direction: column;
     border: none;
     outline: none;
-    background: #f1f2f4;
-    width: 18rem;
-    height: 25rem;
-    border-radius: 20px;
-    
-}
-.list3 h3{
-    text-align:left;
-    font-size: 18px;
-    color: #3d4249;
-    margin-top: 15px;
-    margin-left: 15px;
-}
-div.cards3{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 10px;
-    /* width: 90%;
-    height: 90%; */
-    border-radius: 20px;
-   margin-left: 12px;
-    padding: 10px;
-    overflow: auto;
-    font-size: small;
-    color: #3d4249;
-}
-div.card3{
-   height: 2.6rem;
-   border: none;
-   outline: none;
-   border-radius: 10px;
-    box-shadow: 1.5px 1.5px 1.5px 1.5px    #81848b;
-width: 15rem;
-text-align: justify;
-box-shadow: 0 1px 0 rgba(9,30,66,.25);
-background: white;
-}
-
-div[contenteditable="true"] {
+    border-radius: 7px;
     cursor: pointer;
+    text-align: left;
+    padding-left: 27px;
+    margin-top: 15px;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 100;
   }
   
-div.dragging {
-    opacity: 0.5; /* Reduce opacity while dragging */
+.AddaCard:hover,
+.AddaCard2:hover,
+.AddaCard3:hover{
+    background-color: #bfc2c9;   /* so that the color of button should change */ 
+}
+ 
+  
+/*  media query */
+
+@media all and (max-width:1350px) and (min-width:320px) {
+    main{
+        overflow-x:scroll;
+        
+/*  for scrool bar */
+.list1,.list2,.list3 {
+    scrollbar-color: #c5c9d1; /* Change the scroll bar color to white */
+    scrollbar-width: 10px; /* Set the width of the scroll bar to 10px */
   }
   
-  div.drag-enter {
-    border: 2px dashed #08479e; /* Add border when element is dragged over */
+  .list1::-webkit-scrollbar,   /* by using this method we can select multiply elemensts for pseudoelemests */
+  .list2::-webkit-scrollbar,
+  .list3::-webkit-scrollbar {
+    width: 10px; /* Set the width of the scroll bar to 10px */
   }
   
+  .list1::-webkit-scrollbar-thumb,
+  .list2::-webkit-scrollbar-thumb,
+  .list3::-webkit-scrollbar-thumb {
+    background-color: #c5c9d1; /* Change the color of the scroll bar thumb */
+  }
+    }
+    
+}
+
+
 
 
