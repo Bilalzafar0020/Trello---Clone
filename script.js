@@ -1,6 +1,8 @@
 
 /*  ISSUes (1)  when all div are drap off the height did'nt adjust
 (2) not draging on empty list
+(3) touch problem may be 
+(4) add delete
 */
 
 const addButtonSelectors = ['.AddaCard', '.AddaCard2', '.AddaCard3']; // In this line, an array named addButtonSelectors is declared and assigned with three CSS selector strings: '.AddaCard', '.AddaCard2', and '.AddaCard3'.

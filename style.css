@@ -150,7 +150,7 @@ flex-direction: row;
 @media all and (max-width:1350px) and (min-width:320px) {
     main{
         overflow-x:scroll;
-        
+    }
 /*  for scrool bar */
 .list1,.list2,.list3 {
     scrollbar-color: #c5c9d1; /* Change the scroll bar color to white */
@@ -168,9 +168,80 @@ flex-direction: row;
   .list3::-webkit-scrollbar-thumb {
     background-color: #c5c9d1; /* Change the color of the scroll bar thumb */
   }
-    }
     
 }
+
+@media all and (max-height:1440px) and (min-height:670px){
+    
+  .board{
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+.list1,
+.list2,
+.list3 {
+    border: none;
+    outline: none;
+    background: #f1f2f4;
+    width: 20rem;
+    height: 12vh;
+    border-radius: 10px;
+    overflow: auto;
+  }
+  
+}
+@media all and (max-height:1660px) and (min-height:1440px){
+    
+    .board{
+      display: flex;
+      flex-direction: row;
+      gap: 155px;
+      margin-top: 40px;
+      margin-left: 30px;
+  }
+  
+  .list1,
+  .list2,
+  .list3 {
+      border: none;
+      outline: none;
+      background: #f1f2f4;
+      width: 20rem;
+      height: 8vh;
+      border-radius: 10px;
+      overflow: auto;
+    }
+    
+  }
+  @media all and (max-height:1900px) and (min-height:1660px){
+    
+    .board{
+      display: flex;
+      flex-direction: row;
+      gap: 160px;
+      margin-top: 40px;
+      margin-left: 30px;
+  }
+  
+  .list1,
+  .list2,
+  .list3 {
+      border: none;
+      outline: none;
+      background: #f1f2f4;
+      width: 20rem;
+      height: 3vh;
+      border-radius: 10px;
+      overflow: auto;
+    }
+    
+  }
+
+
 
 
 
