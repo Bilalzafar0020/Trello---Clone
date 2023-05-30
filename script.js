@@ -1,7 +1,9 @@
 
-/*  ISSUes (1)  when all div are drap off the height did'nt adjust
+/*  ISSUes (1)  when all div are drap off the height did'nt adjust  // solved 
 (2) not draging on empty list
-(3) little rotate like trello with drag   */
+(3) little rotate like trello with drag 
+(4)  touch problem 
+(5) when click on + area of button all bomb  */
 
 const addButtonSelectors = ['.AddaCard', '.AddaCard2', '.AddaCard3']; // Array of CSS selector strings for add buttons
 
@@ -32,6 +34,7 @@ function addCard(event) {
   card.style.textAlign = 'left'; // Set text alignment to left
   card.style.boxShadow = '0 1px 0 rgba(9,30,66,.25)'; // Add box shadow
   card.style.background = 'white'; // Set background color to white
+  card.style.cursor = 'type';
   card.style.marginTop = '10px'; // Add top margin
   card.style.marginLeft = '10px'; // Add left margin
   card.style.marginBottom = '3px'; // Add bottom margin
@@ -67,6 +70,7 @@ function dragStart(event) {
   const card = event.target; // Get the dragged card
   dragCard = card; // Store the dragged card in the dragCard variable
   card.style.opacity = '0.8'; // Reduce opacity of the dragged card
+  card.style.cursor = 'grabbing';
   event.dataTransfer.effectAllowed = 'move'; // Set the drag effect to move
   event.dataTransfer.setData('text/html', card.innerHTML); // Set the data to be transferred during drag
 }
@@ -75,7 +79,16 @@ function dragOver(event) {
   event.preventDefault(); // Prevent default behavior during dragover
   const card = event.target; // Get the current card element
   card.style.opacity = '0.8'; // Reduce opacity of the current card
+
+  // if (dragCard !== null) {
+  //   card.style.cursor = 'pointer'; // Set the cursor to crosshair only when dragging is in progress
+  // } else {
+  //   card.style.cursor = 'text'; // Reset the cursor to default when not dragging
+  // }
+
 }
+
+
 
 function dragLeave(event) {
   const card = event.target; // Get the current card element
@@ -83,15 +96,23 @@ function dragLeave(event) {
 }
 
 function drop(event) {
-  event.preventDefault(); // Prevent default behavior during drop
+  event.preventDefault(); // Prevent default behavior of browser  during drop
   const card = event.target; // Get the current card element
   card.style.border = 'none'; // Remove border from the current card
   card.style.opacity = '1'; // Restore opacity of the current card
   card.style.background = '#ffffff'; // Set background color of the current card
-  const list = card.parentNode; // Get the parent list of the current card
-  list.insertBefore(dragCard, card); // Insert the dragged card before the current card
+  const sourceList = dragCard.parentNode; // Get the source list of the dragged card
+  const targetList = card.parentNode; // Get the target list of the current card
+  
+  if (sourceList !== targetList) {
+    sourceList.style.height = `${sourceList.offsetHeight - dragCard.offsetHeight}px`; // Reduce the height of the source list by the height of the dragged card
+    targetList.insertBefore(dragCard, card); // Insert the dragged card before the current card
+    targetList.style.height = `${targetList.offsetHeight + dragCard.offsetHeight}px`; // Increase the height of the target list by the height of the dragged card
+  }
+  
   dragCard = null; // Reset the dragged card variable
 }
+
 
 function touchStart(event) {
   const card = event.target; // Get the touched card
