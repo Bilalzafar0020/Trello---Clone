@@ -1,8 +1,7 @@
 
 /*  ISSUes (1)  when all div are drap off the height did'nt adjust
 (2) not draging on empty list
-(3) touch problem may be 
-(4) add delete
+(3) little rotate like trello with drag
 */
 
 const addButtonSelectors = ['.AddaCard', '.AddaCard2', '.AddaCard3']; // In this line, an array named addButtonSelectors is declared and assigned with three CSS selector strings: '.AddaCard', '.AddaCard2', and '.AddaCard3'.
@@ -66,6 +65,7 @@ card.addEventListener('dragstart', dragStart);
 }
 
 let dragCard = null;
+let targetList = null; // to keep track of the list where the card should be dropped.
 
 function dragStart(event) {
   const card = event.target;
@@ -96,11 +96,11 @@ function drop(event) {
   list.insertBefore(dragCard, card);
   dragCard = null;
 }
-
 function touchStart(event) {
   const card = event.target;
   dragCard = card;
   card.style.opacity = '0.8';
+  targetList = card.parentNode; // Store the reference to the target list based on card parent node
 }
 
 function touchMove(event) {
@@ -115,9 +115,13 @@ function touchEnd(event) {
   const card = event.target;
   card.style.position = 'static';
   card.style.opacity = '1';
-  const list = card.parentNode;
-  list.insertBefore(dragCard, card);
+
+  if (targetList !== null) {
+    targetList.insertBefore(dragCard, card); // Insert the card back into the target list
+  }
+
   dragCard = null;
+  targetList = null;
 }
 
 

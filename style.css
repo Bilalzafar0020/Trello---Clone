@@ -47,8 +47,9 @@ main{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
     width: 100%;
     height: 90vh;
-    background-color: #2491d2;
-    overflow: hidden;
+    /* background:linear-gradient(#1d84d8,#2fa5ca) ; */
+    background: linear-gradient(340deg, #2ca1cb 30%, #1779db 58%);
+    overflow-x: auto;
 display: flex;
 flex-direction: row;
 }
@@ -56,7 +57,7 @@ flex-direction: row;
 .board{
     display: flex;
     flex-direction: row;
-    gap: 150px;
+    gap: 1em;
     margin-top: 40px;
     margin-left: 30px;
 }
@@ -66,9 +67,9 @@ flex-direction: row;
     outline: none;
     background: #f1f2f4;
     width: 20rem;
-    height: 15vh;
+    height: 5.8rem;
     border-radius: 10px;
-    overflow: auto;
+    overflow: auto; /*  for the scroll with in every list */ 
   }
 
   
@@ -147,30 +148,7 @@ flex-direction: row;
   
 /*  media query */
 
-@media all and (max-width:1350px) and (min-width:320px) {
-    main{
-        overflow-x:scroll;
-    }
-/*  for scrool bar */
-.list1,.list2,.list3 {
-    scrollbar-color: #c5c9d1; /* Change the scroll bar color to white */
-    scrollbar-width: 10px; /* Set the width of the scroll bar to 10px */
-  }
-  
-  .list1::-webkit-scrollbar,   /* by using this method we can select multiply elemensts for pseudoelemests */
-  .list2::-webkit-scrollbar,
-  .list3::-webkit-scrollbar {
-    width: 10px; /* Set the width of the scroll bar to 10px */
-  }
-  
-  .list1::-webkit-scrollbar-thumb,
-  .list2::-webkit-scrollbar-thumb,
-  .list3::-webkit-scrollbar-thumb {
-    background-color: #c5c9d1; /* Change the color of the scroll bar thumb */
-  }
-    
-}
-
+/* 
 @media all and (max-height:1440px) and (min-height:670px){
     
   .board{
@@ -240,7 +218,7 @@ flex-direction: row;
     }
     
   }
-
+ */
 
 
 
