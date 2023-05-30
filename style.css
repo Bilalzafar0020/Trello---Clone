@@ -69,7 +69,8 @@ flex-direction: row;
     width: 20rem;
     height: 5.8rem;
     border-radius: 10px;
-    overflow: auto; /*  for the scroll with in every list */ 
+    overflow-y: auto; /*  for the scroll with in every list */ 
+    overflow-x: hidden;
   }
 
   
@@ -147,6 +148,26 @@ flex-direction: row;
  
   
 /*  media query */
+
+ /*
+@media all and (max-width:1050px) and (min-width:980px) {
+  .list1,.list2,.list3{
+    width: 17rem;
+    height: 5.8rem;
+  } }*/
+
+
+  
+
+/* 
+@media all and (max-width:980px) and (min-width:700px) {
+  .list1,.list2,.list3{
+    width: 10rem;
+    height: 5.8rem;
+  }
+} */
+
+
 
 /* 
 @media all and (max-height:1440px) and (min-height:670px){
