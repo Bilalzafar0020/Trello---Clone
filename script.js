@@ -2,7 +2,9 @@
 /*  ISSUes 
 (2) not draging on empty list
 (3) little rotate like trello with drag 
-(4)  touch problem  */
+(4)  touch problem  
+(5) height of list does not adjustcwhen delete button is click 
+*/
 
 const addButtonSelectors = ['.AddaCard', '.AddaCard2', '.AddaCard3']; // Array of CSS selector strings for add buttons
 
@@ -70,24 +72,42 @@ function addCard(event) {
   addButton.scrollIntoView({ behavior: 'smooth', block: 'end' }); // Scroll to the add button (bottom of the list)
 
 
-// // Create delete button
-// const deleteButton = document.createElement('span');
-// deleteButton.className = 'delete-button';
-// deleteButton.innerHTML = '&#10006;'; // You can use any delete icon here
-// deleteButton.style.cursor='pointer';
-// deleteButton.style.float = 'right';
-// deleteButton.style.paddingRight = '10px'
-// // Add click event listener to delete button
-// deleteButton.addEventListener('click', function() {
-//   card.remove(); // Remove the card when delete button is clicked
-// });
+//   delete functions
 
-// // Append delete button to the card
-// card.appendChild(deleteButton);
+  // const cardContainer = document.createElement('div');
+  // cardContainer.style.position = 'relative';
+  // cardContainer.appendChild(card);
+  // cardContainer.className = 'card-container';
 
+  
+  // const deleteButton = document.createElement('span');
+  // deleteButton.className = 'delete-button';
+  // deleteButton.innerHTML =  '<i class="fas fa-trash"></i>'; // '&#10006;';
+  // deleteButton.style.cursor = 'pointer';
+  // deleteButton.style.position = 'absolute';
+  // deleteButton.style.top = '50%';  // vertically middle
+  // deleteButton.style.right = '20px'; //  some right 
+  // deleteButton.style.transform = 'translateY(-50%)'; //used to center the button vertically based on its own height
+  
+  // deleteButton.addEventListener('click', function() {
+  //   cardContainer.remove();
+  //   // adjustListHeight();
+  // });
+  // cardContainer.appendChild(deleteButton);  // is used to append the deleteButton element as a child of the card element.
 
-
-
+  // list.insertBefore(cardContainer, addButton); // where to insert the element based on parent take two parameters  inserting element and reference elemnt before where the element will be placed
+  
+  // function adjustListHeight() {
+  //   const cardContainers = list.getElementsByClassName('card-container');
+  //   let totalHeight = 0;
+  //   for (let i = 0; i < cardContainers.length; i++) {
+  //     if (cardContainers[i] !== cardContainer) {
+  //       totalHeight += cardContainers[i].offsetHeight;
+  //     }
+  //   }
+  //   list.style.height = totalHeight + 'px';
+  // }
+          
   card.addEventListener('dragstart', dragStart); // Add dragstart event listener to the card
   card.addEventListener('dragover', dragOver); // Add dragover event listener to the card
   card.addEventListener('dragleave', dragLeave); // Add dragleave event listener to the card
@@ -104,6 +124,7 @@ function dragStart(event) {
   const card = event.target; // Get the dragged card
   dragCard = card; // Store the dragged card in the dragCard variable
   card.style.opacity = '0.8'; // Reduce opacity of the dragged card
+  // card.style.transform = 'rotate(3deg)'; // Add a slight rotation effect
   card.style.cursor = 'grabbing';
   event.dataTransfer.effectAllowed = 'move'; // Set the drag effect to move
   event.dataTransfer.setData('text/html', card.innerHTML); // Set the data to be transferred during drag
@@ -113,12 +134,6 @@ function dragOver(event) {
   event.preventDefault(); // Prevent default behavior during dragover
   const card = event.target; // Get the current card element
   card.style.opacity = '0.8'; // Reduce opacity of the current card
-
-  // if (dragCard !== null) {
-  //   card.style.cursor = 'pointer'; // Set the cursor to crosshair only when dragging is in progress
-  // } else {
-  //   card.style.cursor = 'text'; // Reset the cursor to default when not dragging
-  // }
 
 }
 

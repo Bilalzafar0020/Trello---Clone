@@ -70,7 +70,7 @@ main::-webkit-scrollbar-thumb {
 .board{
     display: flex;
     flex-direction: row;
-    gap: 1em;
+    gap: 6em;  /*  should be 1em if i want to add option for adding other lists */ 
     margin-top: 40px;
     margin-left: 30px;
 }
@@ -85,7 +85,7 @@ main::-webkit-scrollbar-thumb {
     overflow-y: auto; /*  for the scroll with in every list */ 
     overflow-x: hidden;
   }
-
+  
   
 /*  for scrool bar */
 .list1,.list2,.list3 {
@@ -160,102 +160,10 @@ main::-webkit-scrollbar-thumb {
     background-color: #bfc2c9;   /* so that the color of button should change */ 
 }
  
-  
-/*  media query */
-
- /*
-@media all and (max-width:1050px) and (min-width:980px) {
-  .list1,.list2,.list3{
-    width: 17rem;
-    height: 5.8rem;
-  } }*/
-
-
-  
-
-/* 
-@media all and (max-width:980px) and (min-width:700px) {
-  .list1,.list2,.list3{
-    width: 10rem;
-    height: 5.8rem;
-  }
-} */
-
-
-
-/* 
-@media all and (max-height:1440px) and (min-height:670px){
-    
-  .board{
-    display: flex;
-    flex-direction: row;
-    gap: 150px;
-    margin-top: 40px;
-    margin-left: 30px;
+.list-container {
+  display: flex;           /*  for the delete button height adjust  */
+  flex-direction: column;
 }
-
-.list1,
-.list2,
-.list3 {
-    border: none;
-    outline: none;
-    background: #f1f2f4;
-    width: 20rem;
-    height: 12vh;
-    border-radius: 10px;
-    overflow: auto;
-  }
-  
-}
-@media all and (max-height:1660px) and (min-height:1440px){
-    
-    .board{
-      display: flex;
-      flex-direction: row;
-      gap: 155px;
-      margin-top: 40px;
-      margin-left: 30px;
-  }
-  
-  .list1,
-  .list2,
-  .list3 {
-      border: none;
-      outline: none;
-      background: #f1f2f4;
-      width: 20rem;
-      height: 8vh;
-      border-radius: 10px;
-      overflow: auto;
-    }
-    
-  }
-  @media all and (max-height:1900px) and (min-height:1660px){
-    
-    .board{
-      display: flex;
-      flex-direction: row;
-      gap: 160px;
-      margin-top: 40px;
-      margin-left: 30px;
-  }
-  
-  .list1,
-  .list2,
-  .list3 {
-      border: none;
-      outline: none;
-      background: #f1f2f4;
-      width: 20rem;
-      height: 3vh;
-      border-radius: 10px;
-      overflow: auto;
-    }
-    
-  }
- */
-
-
 
 
 
