@@ -2,7 +2,6 @@
 /* @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Lobster&family=Poppins:wght@400;500&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Lobster&family=Poppins:wght@400;500&family=Tsukimi+Rounded:wght@400;500&display=swap');
 
-
 *{
     margin: 0;
     padding: 0;
@@ -50,10 +49,24 @@ main{
     /* background:linear-gradient(#1d84d8,#2fa5ca) ; */
     background: linear-gradient(340deg, #2ca1cb 30%, #1779db 58%);
     overflow-x: auto;
+    overflow-y: hidden;
 display: flex;
 flex-direction: row;
 }
+/* 
+main::-webkit-scrollbar {
+  width: 10px;
+  height: 15px;
+  background: #c5c9d1;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
 
+main::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 10px;
+}   */
 .board{
     display: flex;
     flex-direction: row;
@@ -95,10 +108,11 @@ flex-direction: row;
   .Addtitle2,
   .Addtitle3 {
     position: sticky; /* so that the title should stick */
-    top: 0;
+    top: 7px;
     z-index: 1;
     margin-left: 10px;
     margin-top: 10px;
+    padding-left: 5px; /* so that for text to start from some padding */
     width: 18rem;
     height: 30px;
     background: #f1f2f4;

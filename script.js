@@ -1,15 +1,29 @@
 
-/*  ISSUes (1)  when all div are drap off the height did'nt adjust  // solved 
+/*  ISSUes 
 (2) not draging on empty list
 (3) little rotate like trello with drag 
-(4)  touch problem 
-(5) when click on + area of button all bomb  */
+(4)  touch problem  */
 
 const addButtonSelectors = ['.AddaCard', '.AddaCard2', '.AddaCard3']; // Array of CSS selector strings for add buttons
 
+// addButtonSelectors.forEach((buttonSelector) => {
+//   const addButton = document.querySelector(buttonSelector); // Get the add button element
+//   addButton.addEventListener('click', addCard); // Add click event listener to each add button
+// });
+
+//  we add some more logic why (because + is a icon so when user click on that the div created between
+//   the button and distroy UI so we add if condition if not click on + make div otherwise no)
+
+
 addButtonSelectors.forEach((buttonSelector) => {
   const addButton = document.querySelector(buttonSelector); // Get the add button element
-  addButton.addEventListener('click', addCard); // Add click event listener to each add button
+  const plusIcon = addButton.querySelector('i.fa-plus'); // Get the "+" icon element within the button
+
+  addButton.addEventListener('click', function(event) {
+    if (!event.target.matches('i.fa-plus')) {
+      addCard(event);
+    }
+  }); // Add click event listener to the add button, excluding the "+" icon element
 });
 
 function addCard(event) {
@@ -32,6 +46,7 @@ function addCard(event) {
   card.style.fontSize = '14px'; // Set font size to 14px
   card.style.paddingTop = '10px'; // Add top padding
   card.style.textAlign = 'left'; // Set text alignment to left
+  card.style.paddingLeft = '10px'; // Add left padding
   card.style.boxShadow = '0 1px 0 rgba(9,30,66,.25)'; // Add box shadow
   card.style.background = 'white'; // Set background color to white
   card.style.cursor = 'type';
@@ -53,6 +68,25 @@ function addCard(event) {
   }
 
   addButton.scrollIntoView({ behavior: 'smooth', block: 'end' }); // Scroll to the add button (bottom of the list)
+
+
+// // Create delete button
+// const deleteButton = document.createElement('span');
+// deleteButton.className = 'delete-button';
+// deleteButton.innerHTML = '&#10006;'; // You can use any delete icon here
+// deleteButton.style.cursor='pointer';
+// deleteButton.style.float = 'right';
+// deleteButton.style.paddingRight = '10px'
+// // Add click event listener to delete button
+// deleteButton.addEventListener('click', function() {
+//   card.remove(); // Remove the card when delete button is clicked
+// });
+
+// // Append delete button to the card
+// card.appendChild(deleteButton);
+
+
+
 
   card.addEventListener('dragstart', dragStart); // Add dragstart event listener to the card
   card.addEventListener('dragover', dragOver); // Add dragover event listener to the card
@@ -154,7 +188,7 @@ function touchEnd(event) {
 
 
 
-/* here cdocumention avalible */
+/* here documention avalible */
 
 
 // const addButtonSelectors = ['.AddaCard', '.AddaCard2', '.AddaCard3']; // In this line, an array named addButtonSelectors is declared and assigned with three CSS selector strings: '.AddaCard', '.AddaCard2', and '.AddaCard3'.
