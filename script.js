@@ -1,11 +1,9 @@
 
 /*  ISSUes 
-(2) not draging on empty list
-(3) little rotate like trello with drag 
 (4)  touch problem  
 (5) height of list does not adjustcwhen delete button is click 
+()  does not drop on it's own list 
 */
-
 const addButtonSelectors = ['.AddaCard', '.AddaCard2', '.AddaCard3']; // Array of CSS selector strings for add buttons
 
 // addButtonSelectors.forEach((buttonSelector) => {
@@ -58,7 +56,7 @@ function addCard(event) {
 
   list.insertBefore(card, addButton); // Insert the new card before the add button
 
-  const maxHeight = 500; // Set the maximum height of the list
+  const maxHeight = 480; // Set the maximum height of the list
   const currentHeight = list.offsetHeight; // Get the current height of the list
   const newHeight = currentHeight + card.offsetHeight; // Calculate the new height after adding the card
 
