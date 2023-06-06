@@ -1,0 +1,254 @@
+/*  Navbar font */
+/* @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Lobster&family=Poppins:wght@400;500&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Lobster&family=Poppins:wght@400;500&family=Tsukimi+Rounded:wght@400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+  background-image: url(./Assets/fellow3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed;  
+  background-blend-mode: multiply; 
+   filter: brightness(0.8); 
+}
+header{
+    /* font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Poppins', sans-serif; */
+
+font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Tsukimi Rounded', sans-serif;
+
+
+text-align: center;
+height: 10vh;
+width: 100%;
+background-color: #0c141d !important;
+}
+div.logo{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: center;
+ padding-top: 5px;
+}
+div.logo p{
+    font-size: 30px;
+    color: #eee1e1;
+font-variant:normal;
+font-weight: 500;
+}
+
+
+.headerboard{
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start; 
+  background-color: #0a1422;
+  width: 100%;
+  height: 10vh;
+}
+input.boardName{
+margin-left: 20px;
+width: 20rem;
+height: 40px;
+font-size: 25px;
+color: #fffcfc;
+background-color: #0a1422;
+font-variant:normal;
+border: none;
+outline: none;
+margin-top: 10px;
+border-radius: 10px;
+cursor: text;
+padding-left: 5px;
+z-index: 1;
+transition: border-color 0.1s, border-radius 0.1s, background-color 0.1s;
+}
+
+.boardName::placeholder{
+  color: #eee2e2;
+}
+
+input.boardName:focus,
+input.boardName:hover {     /*  so that when user focus it the bordere should display */
+  border: 3px solid #0004fc;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #000000;
+}
+input.boardName:focus::placeholder,
+input.boardName:hover::placeholder {
+  color: #000000;
+} 
+main{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    width: 100%;
+    height: 100vh;
+    /* background:linear-gradient(#1d84d8,#2fa5ca) ; */
+     /* background-image: url(./Assets/fellow3.jpg) ;  */
+    overflow-x: auto;
+    overflow-y: auto;
+display: flex;
+flex-direction: row;
+}
+
+
+.board{
+    display: flex;
+    flex-direction: row;
+    gap: 8em;  /*  should be 1em if i want to add option for adding other lists */ 
+    margin-top: 25px;
+    margin-left: 30px;
+    height: 94vh;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+.board::-webkit-scrollbar {
+  width: 10px;
+  height: 15px;
+  background: #6e6c6c8e;
+  border-radius: 20px;
+  z-index: 9999;
+}
+
+.board::-webkit-scrollbar-thumb {
+  background: #c5c9d1;
+  border-radius: 20px;
+  width: 10px;
+}  
+.list1,
+.list2,
+.list3 {
+    border: none;
+    outline: none;
+    background: #f1f2f4;
+   max-width: 20rem;
+    height: 5.8rem;
+    border-radius: 10px;
+    overflow-y: auto !important; /*  for the scroll with in every list */ 
+    overflow-x: hidden !important;
+    min-width: 20rem;
+  }
+  
+  
+/*  for scrool bar */
+.list1,.list2,.list3 {
+    scrollbar-color: #c5c9d1; /* Change the scroll bar color to white */
+    scrollbar-width: 10px; /* Set the width of the scroll bar to 10px */
+  }
+  
+  .list1::-webkit-scrollbar,   /* by using this method we can select multiply elemensts for pseudoelemests */
+  .list2::-webkit-scrollbar,
+  .list3::-webkit-scrollbar {
+    width: 10px !important; /* Set the width of the scroll bar to 10px */
+  }
+  
+  .list1::-webkit-scrollbar-thumb,
+  .list2::-webkit-scrollbar-thumb,
+  .list3::-webkit-scrollbar-thumb {
+    background-color: #c5c9d1 !important; /* Change the color of the scroll bar thumb */
+  }
+  .Addtitle1,
+  .Addtitle2,
+  .Addtitle3 {
+    position: sticky; /* so that the title should stick */
+    top: 7px;
+    z-index: 1;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-left: 5px; /* so that for text to start from some padding */
+    width: 18rem;
+    height: 30px;
+    background: #f1f2f4;
+    border: none;
+    outline: none;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 550;
+    cursor: text;
+    transition: border-color 0.1s, border-radius 0.1s, background-color 0.1s;
+  }
+  
+  .Addtitle1:focus,
+  .Addtitle1:hover,
+  .Addtitle2:focus,
+  .Addtitle2:hover,
+  .Addtitle3:focus,
+  .Addtitle3:hover {     /*  so that when user focus it the bordere should display */
+    border: 2px solid #003bfc;
+    border-radius: 5px;
+    background-color: #ffffff;
+  }
+  
+.AddaCard,.AddaCard2,.AddaCard3 {
+    margin-left: 10px;
+    margin-bottom: 8px;
+    width: 16.5rem;
+    height: 30px;
+    background: #f1f2f4;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 27px;
+    margin-top: 15px;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 100;
+  }
+  
+.AddaCard:hover,
+.AddaCard2:hover,
+.AddaCard3:hover{
+    background-color: #bfc2c9;   /* so that the color of button should change */ 
+}
+ 
+/* .list-container {
+  display: flex;           /*  for the delete button height adjust 
+  flex-direction: column;
+} */ 
+
+
+/* width */
+body::-webkit-scrollbar {
+  width: 10px;
+  background: #6e6c6c8e;
+  border-radius: 20px;
+  
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+ 
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: #c5c9d1;
+  border-radius: 20px;
+  min-height: 5px;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #ffffff; }
+
+/* body::-webkit-scrollbar-button{
+  background: #fffdfd;
+} 
+
+body::-webkit-scrollbar-track-piece{
+  background: #c5c9d1;
+}
+*/
