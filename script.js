@@ -68,43 +68,6 @@ function addCard(event) {
   }
 
   addButton.scrollIntoView({ behavior: 'smooth', block: 'end' }); // Scroll to the add button (bottom of the list)
-
-
-//   delete functions
-
-  // const cardContainer = document.createElement('div');
-  // cardContainer.style.position = 'relative';
-  // cardContainer.appendChild(card);
-  // cardContainer.className = 'card-container';
-
-  
-  // const deleteButton = document.createElement('span');
-  // deleteButton.className = 'delete-button';
-  // deleteButton.innerHTML =  '<i class="fas fa-trash"></i>'; // '&#10006;';
-  // deleteButton.style.cursor = 'pointer';
-  // deleteButton.style.position = 'absolute';
-  // deleteButton.style.top = '50%';  // vertically middle
-  // deleteButton.style.right = '20px'; //  some right 
-  // deleteButton.style.transform = 'translateY(-50%)'; //used to center the button vertically based on its own height
-  
-  // deleteButton.addEventListener('click', function() {
-  //   cardContainer.remove();
-  //   // adjustListHeight();
-  // });
-  // cardContainer.appendChild(deleteButton);  // is used to append the deleteButton element as a child of the card element.
-
-  // list.insertBefore(cardContainer, addButton); // where to insert the element based on parent take two parameters  inserting element and reference elemnt before where the element will be placed
-  
-  // function adjustListHeight() {
-  //   const cardContainers = list.getElementsByClassName('card-container');
-  //   let totalHeight = 0;
-  //   for (let i = 0; i < cardContainers.length; i++) {
-  //     if (cardContainers[i] !== cardContainer) {
-  //       totalHeight += cardContainers[i].offsetHeight;
-  //     }
-  //   }
-  //   list.style.height = totalHeight + 'px';
-  // }
           
   card.addEventListener('dragstart', dragStart); // Add dragstart event listener to the card
   card.addEventListener('dragover', dragOver); // Add dragover event listener to the card
@@ -193,6 +156,41 @@ function touchEnd(event) {
 
 
 
+//   delete functions
+
+  // const cardContainer = document.createElement('div');
+  // cardContainer.style.position = 'relative';
+  // cardContainer.appendChild(card);
+  // cardContainer.className = 'card-container';
+
+  
+  // const deleteButton = document.createElement('span');
+  // deleteButton.className = 'delete-button';
+  // deleteButton.innerHTML =  '<i class="fas fa-trash"></i>'; // '&#10006;';
+  // deleteButton.style.cursor = 'pointer';
+  // deleteButton.style.position = 'absolute';
+  // deleteButton.style.top = '50%';  // vertically middle
+  // deleteButton.style.right = '20px'; //  some right 
+  // deleteButton.style.transform = 'translateY(-50%)'; //used to center the button vertically based on its own height
+  
+  // deleteButton.addEventListener('click', function() {
+  //   cardContainer.remove();
+  //   // adjustListHeight();
+  // });
+  // cardContainer.appendChild(deleteButton);  // is used to append the deleteButton element as a child of the card element.
+
+  // list.insertBefore(cardContainer, addButton); // where to insert the element based on parent take two parameters  inserting element and reference elemnt before where the element will be placed
+  
+  // function adjustListHeight() {
+  //   const cardContainers = list.getElementsByClassName('card-container');
+  //   let totalHeight = 0;
+  //   for (let i = 0; i < cardContainers.length; i++) {
+  //     if (cardContainers[i] !== cardContainer) {
+  //       totalHeight += cardContainers[i].offsetHeight;
+  //     }
+  //   }
+  //   list.style.height = totalHeight + 'px';
+  // }
 
 
 

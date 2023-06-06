@@ -81,32 +81,7 @@ input.boardName:hover {     /*  so that when user focus it the bordere should di
 input.boardName:focus::placeholder,
 input.boardName:hover::placeholder {
   color: #000000;
-}
-
-
-
-/*  main section  */ 
-body{
-  overflow-y: auto;
-  
-}
-body::-webkit-scrollbar {
-  width: 10px;
-  height: 2px;
-  background: #6e6c6c8e;
-  border-radius: 20px;
-  z-index: 9999;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: #c5c9d1;
-  border-radius: 20px;
-  max-width: 5px;
-  height: 2px;
-}
-body::-webkit-scrollbar-track {
-  height: 2px;
-}
+} 
 main{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
     width: 100%;
@@ -152,8 +127,8 @@ flex-direction: row;
    max-width: 20rem;
     height: 5.8rem;
     border-radius: 10px;
-    overflow-y: auto; /*  for the scroll with in every list */ 
-    overflow-x: hidden;
+    overflow-y: auto !important; /*  for the scroll with in every list */ 
+    overflow-x: hidden !important;
     min-width: 20rem;
   }
   
@@ -167,13 +142,13 @@ flex-direction: row;
   .list1::-webkit-scrollbar,   /* by using this method we can select multiply elemensts for pseudoelemests */
   .list2::-webkit-scrollbar,
   .list3::-webkit-scrollbar {
-    width: 10px; /* Set the width of the scroll bar to 10px */
+    width: 10px !important; /* Set the width of the scroll bar to 10px */
   }
   
   .list1::-webkit-scrollbar-thumb,
   .list2::-webkit-scrollbar-thumb,
   .list3::-webkit-scrollbar-thumb {
-    background-color: #c5c9d1; /* Change the color of the scroll bar thumb */
+    background-color: #c5c9d1 !important; /* Change the color of the scroll bar thumb */
   }
   .Addtitle1,
   .Addtitle2,
@@ -237,4 +212,35 @@ flex-direction: row;
 } */ 
 
 
+/* width */
+body::-webkit-scrollbar {
+  width: 10px;
+  background: #6e6c6c8e;
+  border-radius: 20px;
+  
+}
 
+/* Track */
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+ 
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: #c5c9d1;
+  border-radius: 20px;
+  min-height: 5px;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #ffffff; }
+
+/* body::-webkit-scrollbar-button{
+  background: #fffdfd;
+} 
+
+body::-webkit-scrollbar-track-piece{
+  background: #c5c9d1;
+}
+*/
