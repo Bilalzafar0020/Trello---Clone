@@ -340,6 +340,122 @@ h3{
 </main>
 
 
+<script>
+
+//  this all data will be save also 
+
+    document.addEventListener('DOMContentLoaded', function() {
+      let initialButton = document.querySelector('.addingButton');
+      let containerDiv = document.querySelector('.buttons');
+  
+      let data = localStorage.getItem('boardData'); // Retrieve data from local storage
+  
+      if (data) {
+        // If data exists in local storage, parse it from JSON
+        data = JSON.parse(data);
+  
+        // Re-create buttons based on the stored data
+        data.buttons.forEach(function(button) {
+          let newButton = document.createElement('button');
+          newButton.classList.add(button.class);
+          newButton.textContent = button.text;
+  
+          let link = document.createElement('a');
+          link.href = button.link;
+          link.style.height = 'fit-content';
+          link.appendChild(newButton);
+  
+          containerDiv.insertBefore(link, initialButton);
+        });
+      } else {
+        // If no data exists in local storage, create initial button count
+        data = {
+          buttons: []
+        };
+      }
+  
+      initialButton.addEventListener('click', function() {
+        if (data.buttons.length < 6) {
+          let buttonIndex = data.buttons.length + 2;
+  
+          let newButton = document.createElement('button');
+          newButton.classList.add('button' + buttonIndex);
+          newButton.textContent = 'Board ' + buttonIndex;
+  
+          let link = document.createElement('a');
+          link.href = getButtonLink(buttonIndex);
+          link.style.height = 'fit-content';
+          link.appendChild(newButton);
+  
+          containerDiv.insertBefore(link, initialButton);
+  
+          // Store the new button data
+          data.buttons.push({
+            class: 'button' + buttonIndex,
+            text: 'Board ' + buttonIndex,
+            link: link.href
+          });
+  
+          // Update the data in local storage
+          localStorage.setItem('boardData', JSON.stringify(data));
+        } else {
+          showAlert('Buttons limit reached');
+        }
+      });
+  
+      function showAlert(message) {
+        let alertDiv = document.createElement('div');
+        alertDiv.classList.add('alert');
+        alertDiv.textContent = message;
+  
+        alertDiv.style.position = 'fixed';
+        alertDiv.style.top = '20%';
+        alertDiv.style.right = '20px';
+        alertDiv.style.transform = 'translateY(-50%)';
+        alertDiv.style.background = 'blue';
+        alertDiv.style.color = 'white';
+        alertDiv.style.padding = '10px';
+        alertDiv.style.borderRadius = '5px 5px 2px 5px';
+        alertDiv.style.zIndex = '9999';
+  
+        document.body.appendChild(alertDiv);
+  
+        setTimeout(function() {
+          document.body.removeChild(alertDiv);
+        }, 3000); //to remove the alert message div from the DOM after 3000 milliseconds (3 seconds)
+      }
+  
+      function getButtonLink(buttonIndex) {
+        var rootPath = './'; // Assuming the folders are in the root directory
+  
+        switch (buttonIndex) {
+          case 2:
+            return rootPath + 'Green/index.html';
+          case 3:
+            return rootPath + 'Universe/index.html';
+          case 4:
+            return rootPath + 'Red/index.html';
+          case 5:
+            return rootPath + 'Alpahabates/index.html';
+          case 6:
+            return rootPath + 'Yellow/index.html';
+          case 7:
+            return rootPath + 'Purple/index.html';
+          default:
+            return 'blue/index.html';
+        }
+      }
+    });
+  </script>
+  
+
+
+
+
+
+
+
+<!-- 
  <script>
     document.addEventListener('DOMContentLoaded', function(){ //  when html docments loaded function start
         let initalButton  = document.querySelector('.addingButton');
@@ -420,7 +536,7 @@ else {
   
 
 </script> 
-
+ -->
 
 
 
